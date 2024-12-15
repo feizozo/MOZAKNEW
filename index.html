@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片馬賽克處理器</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.12/dist/face-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>照片馬賽克處理器</h1>
+        
+        <div class="upload-section">
+            <input type="file" id="imageUpload" accept="image/*" multiple>
+            <div class="upload-hint">可以選擇一張或多張圖片</div>
+        </div>
+
+        <div class="controls">
+            <div class="mosaic-size">
+                <label for="mosaicSize">馬賽克大小: <span class="size-label">10px</span></label>
+                <input type="range" id="mosaicSize" min="5" max="30" value="10">
+            </div>
+            
+            <button id="processBtn" disabled>處理圖片</button>
+            <button id="downloadBtn" disabled>下載全部</button>
+            <button id="themeToggle">切換主題</button>
+        </div>
+
+        <div id="imageList" class="image-list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

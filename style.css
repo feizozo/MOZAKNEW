@@ -1,0 +1,139 @@
+:root[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --button-bg: #4a90e2;
+    --button-text: #ffffff;
+    --button-disabled: #cccccc;
+    --preview-bg: #f5f5f5;
+    --border-color: #dddddd;
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --button-bg: #4a90e2;
+    --button-text: #ffffff;
+    --button-disabled: #444444;
+    --preview-bg: #2d2d2d;
+    --border-color: #444444;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.upload-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.folder-path {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.upload-hint {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.mosaic-size {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+button:disabled {
+    background-color: var(--button-disabled);
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.image-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.image-item {
+    background-color: var(--preview-bg);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+.image-preview {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.preview-original,
+.preview-processed {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preview-label {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+.image-name {
+    text-align: center;
+    font-size: 0.9em;
+    word-break: break-all;
+}
+
+input[type="range"] {
+    width: 200px;
+}
